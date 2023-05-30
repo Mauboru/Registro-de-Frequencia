@@ -1,6 +1,6 @@
 function gerarPdf(){
-  var paginaAtual = SpreadsheetApp.openById("1P1Ak83cmWLbaS5qvc4RE0SQdTd7JHfM0Td1n13hLsWg");
-  var planilha = paginaAtual.getSheetByName("TABELAS HORAS");
+  var paginaAtual = SpreadsheetApp.openById("INSERIR O URL DO GOOGLE SHEET QUE VC IRA USAR");
+  var planilha = paginaAtual.getSheetByName("INSERIR O NOME DA PAGINA DA URL");
   var url = paginaAtual.getUrl();
   url = url.replace(/edit$/,'');
   var token = ScriptApp.getOAuthToken();
