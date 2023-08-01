@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+      }
+
+      .button {
+        display: block;
+        width: 150px;
+        height: 40px;
+        background-color: #4CAF50;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        text-decoration: none;
+        margin-bottom: 10px;
+        border-radius: 5px;
+      }
+
+      .button:hover{
+        background-color: #4caf4f6e;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="button" onclick="cadastrarUsuario()">Cadastrar</button>
+    <button class="button" onclick="cadastrarUsuario()">Editar</button>
+    <script>
+      function cadastrarUsuario() {
+        google.script.run.openLink('https://docs.google.com/forms/d/e/1FAIpQLSeztymtOaLu3ZgVZJ1GhvaMfPMqT7YCi7M9pYY5vz3-visv5Q/viewform');
+      }
+    </script>
+  </body>
+</html>
