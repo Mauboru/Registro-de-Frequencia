@@ -1,4 +1,4 @@
-//Variaveis para referenciar as paginas
+//Variaveis para referenciar as paginas <TESTANDO O PUSH>
 var pagina = SpreadsheetApp.openById("INSERIR O URL DO GOOGLE SHEETS");
 var banco = pagina.getSheetByName("INSERIR O NOME DA PAGINA DO URL");
 var cadastro = pagina.getSheetByName("INSERIR O NOME DA PAGINA DO URL");
