@@ -1,0 +1,145 @@
+<html>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url("https://media.istockphoto.com/id/1141071607/pt/foto/mangrove-tree-foliage-with-roots-underwater-sea.jpg?s=612x612&w=0&k=20&c=G18JaWhARK5FSzEveW2tch16L38yG3KpxDBBdyzYQF0=");
+    background-size: cover;
+    background-position: center;
+  }
+
+  main {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .fundo {
+    background-color: rgba(255, 255, 255);
+    border-radius: 3rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    padding: 1rem;
+  }
+
+  .fundo h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #274e13;
+    font-size: 55px;
+    margin-bottom: 10px;
+    text-align: center;
+    padding: 25px;
+  }
+
+  .input-container {
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+  }
+
+  .input-container label {
+    width: 60px;
+    font-size: 14px;
+    text-align: right;
+  }
+
+  .input-container input {
+    flex: 1;
+    padding: 5px;
+    font-size: 14px;
+  }
+
+  .link {
+    font-size: 12px;
+    margin-top: 20px;
+    text-decoration: none;
+    justify-content: center;
+    display: flex;
+    padding: 25px;
+  }
+
+  .link a {
+    text-decoration: none;
+    color: #274e13;
+  }
+
+  .button-container {
+    margin-top: 10px;
+    text-align: right;
+    display: flex;
+    justify-content: center;
+  }
+
+  .button-container button {
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+
+  .button-container button:hover {
+    background-color: rgb(49, 119, 49);
+  }
+</style>
+
+<body>
+  <main>
+    <div class="fundo">
+      <h1>Login</h1>
+      <div class="input-container">
+        <label for="username">Usuário:</label>
+        <input type="text" onkeydown="onPressEnter(event)" placeholder="Insira seu ID" id="username" name="username"
+          required>
+      </div>
+      <div class="input-container">
+        <label for="password">Senha:</label>
+        <input type="password" onkeydown="onPressEnter(event)" placeholder="***************" id="password"
+          name="password" required>
+      </div>
+      <div class="link">
+        <a href="" target="_blank">Esqueceu sua senha?</a>
+      </div>
+      <div class="button-container">
+        <button onclick="">Cadastrar</button>
+        <button onclick="submitForm()">Entrar</button>
+      </div>
+    </div>
+  </main>
+</body>
+<script>
+  function onPressEnter(event) {
+    var tecla = event.key;
+    if (tecla == "Enter") {
+      submitForm();
+    }
+  }
+  function submitForm() {
+    var password = document.getElementById('password').value;
+    var username = document.getElementById('username').value;
+
+    // Exemplo: Verificar se o usuário e a senha estão corretos
+    google.script.run.withSuccessHandler(function (credenciais) {
+      if (credenciais == true) {
+        // Realizar o login
+        google.script.host.close();
+      } else {
+        alert('Usuário ou senha incorretos. Por favor, tente novamente.');
+      }
+    }).login(username, password);
+  }
+</script>
+
+</html>

@@ -1,0 +1,66 @@
+<html>
+
+<head>
+    <style>
+        .alert {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        .alert-header {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .alert-body {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        .alert-body b {
+            color: red;
+        }
+
+        .alert-footer {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .alert-footer a {
+            color: blue;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="image-container">
+        <img src="https://media.tenor.com/TUJ_WGkQ6pcAAAAC/dog-computer.gif" alt="Imagem">
+    </div>
+    <div class="alert">
+        <div class="alert-body">
+            <p><b>ATENÇÃO!</b> O tempo do intervalo intrajornada, conhecido como horário de almoço, é estabelecido pelo
+                <a href="https://www.planalto.gov.br/ccivil_03/Decreto-Lei/Del5452.htm#art71" target="_blank">Artigo
+                    71</a> da Consolidação das Leis do Trabalho, ou seja, pode ser que você <b>NÃO TENHA FEITO MAIS</b>
+                que 6 horas de trabalho para ter direito a 1 ou 2 horas de intervalo!</p>
+        </div>
+        <div class="alert-footer">
+            <button onclick="closeAlert(), closeDialog()">OK</button>
+        </div>
+    </div>
+    <script>
+        function closeAlert() {
+            var alert = document.querySelector('.alert');
+            alert.style.display = 'none';
+        }
+        function closeDialog() {
+            google.script.host.close();
+        }
+    </script>
+</body>
+
+</html>

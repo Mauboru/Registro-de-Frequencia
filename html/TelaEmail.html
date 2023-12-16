@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0f0f0;
+            margin: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        span {
+            color: rgba(51, 255, 0, 0.808);
+        }
+
+        .email {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<script>
+    function enviar() {
+        const emails = document.getElementById('txtDestinatario').value;
+        const conteudo = document.getElementById('txtConteudo').value;
+
+        google.script.run.withSuccessHandler(function (emails) {
+            if (emails == false) {
+                alert('Email incorreto!');
+            }
+        }).sendRegisterByEmail(emails, conteudo);
+    }
+
+    function onPressEnter(event) {
+        var tecla = event.key;
+        if (tecla == "Enter") {
+            enviar();
+        }
+    }
+</script>
+
+<body>
+    <div class="container">
+        <h1>Envie seu <span>Relatório</span> por Email:</h1>
+        <!-- <select id="emails">
+            <option value="email-1">incubadora.paranagua@ifpr.edu.br</option>
+            <option value="email-2">leandro.pereira@ifpr.edu.br</option>
+        </select> -->
+        <div class="email">
+            <div class="email-destinatarios">
+                <input id="txtDestinatario" onkeydown="onPressEnter(event)" type="email" multiple
+                    placeholder="Destinatários" required>
+            </div>
+            <div class="email-conteudo">
+                <input id="txtConteudo" onkeydown="onPressEnter(event)" type="email" placeholder="Conteúdo do Email">
+            </div>
+            <button onclick="enviar()">Enviar</button>
+        </div>
+    </div>
+</body>
+
+</html>
