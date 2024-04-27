@@ -3,4 +3,4 @@ Código em AppScript feito para auxílio do controle de registros de frequência
 
 # Skills
 
-Tela prototipada por @DouglasRoqueMachado
+Tela prototipada por douglasrmachado <douglasroqmachado@gmail.com>>
